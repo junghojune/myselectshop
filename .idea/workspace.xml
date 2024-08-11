@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2afa6c16-2d24-40a1-8f68-040faccc576e" name="Changes" comment="yml 변경">
+    <list default="true" id="2afa6c16-2d24-40a1-8f68-040faccc576e" name="Changes" comment="Dockerfile 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,7 @@
   <component name="GitLabDefaultAccount">
     <option name="defaultAccountId" value="2a80a239-4d3c-4720-9bb2-3cdf2bca9f93" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
 }]]></component>
@@ -73,6 +75,9 @@
     "Docker.Dockerfile.executor": "Run",
     "Gradle.Build cicd2.executor": "Run",
     "Gradle.cicd2 [bootJar].executor": "Run",
+    "Gradle.cicd2 [build].executor": "Run",
+    "Gradle.cicd2 [clean].executor": "Run",
+    "Gradle.cicd2 [jar].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -113,18 +118,71 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MyselectshopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="myselectshop.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.myselectshop.MyselectshopApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sparta.myselectshop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="cicd2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="cicd2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="cicd2 [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
@@ -141,8 +199,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Gradle.cicd2 [build]" />
+        <item itemvalue="Gradle.cicd2 [clean]" />
         <item itemvalue="Gradle.cicd2 [bootJar]" />
-        <item itemvalue="Spring Boot.MyselectshopApplication" />
+        <item itemvalue="Gradle.cicd2 [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +223,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723369541925</updated>
       <workItem from="1723369542920" duration="60000" />
-      <workItem from="1723369618350" duration="4417000" />
+      <workItem from="1723369618350" duration="5052000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -205,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723380092764</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dockerfile 변경">
+      <option name="closed" value="true" />
+      <created>1723380636387</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723380636388</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +285,7 @@
     <MESSAGE value="db 정보 수정" />
     <MESSAGE value="다른 자료 추가" />
     <MESSAGE value="yml 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="yml 변경" />
+    <MESSAGE value="Dockerfile 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile 변경" />
   </component>
 </project>
